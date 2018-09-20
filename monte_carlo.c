@@ -12,7 +12,7 @@ int random_gg() {
 }
 int main(){
 
-    static long interval = 1000000;
+    static long interval = 1000000000;
     double  pi=0.0;
     double c_point=0.0;
     double s_point=0.0;
@@ -23,11 +23,11 @@ int main(){
      srand(time(NULL)); 
 
     printf("Serial code Start:%lf",s_time) ;
-    
+    unsigned int see = 1;
     for(long int i=0; i<interval;i++){
 
-        double r_x=(double)(random_gg() % (interval + 1)) / interval; 
-        double r_y=(double)(random_gg() % (interval + 1)) / interval; 
+        double r_x=(double)(rand_r(&see) % (interval + 1)) / interval; 
+        double r_y=(double)(rand_r(&see) % (interval + 1)) / interval; 
 
         double tot= (r_x*r_x)+(r_y*r_y);
 
