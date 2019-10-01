@@ -19,8 +19,10 @@ void main()
    timeStrt=omp_get_wtime();
    #pragma omp parallel
    {
+   // Variable declaration
    int id, i, Nthreads, istart, iend;
    id = omp_get_thread_num();
+   // Gets number of threads in the machine
    Nthreads = omp_get_num_threads();
    //printf("%d",Nthreads);
    istart = N/Nthreads*id;
